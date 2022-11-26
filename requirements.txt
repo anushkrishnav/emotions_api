@@ -4,4 +4,5 @@ opencv-python
 requests
 pandas
 tensorflow
+gunicorn
 FER
