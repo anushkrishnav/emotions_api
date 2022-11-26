@@ -17,6 +17,11 @@ def index():
     df = score_data(result)
     return jsonify(df)
 
+@app.route("/", methods=["GET"])
+def home():
+    return "Hello World!"
+
+
   
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=4567, debug=False)
