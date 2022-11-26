@@ -3,5 +3,5 @@ numpy
 opencv-python-headless
 requests
 pandas
-FER
 tensorflow
+FER
