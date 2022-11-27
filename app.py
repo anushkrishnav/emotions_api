@@ -15,6 +15,7 @@ def index():
     loop = asyncio.get_event_loop()
     result = loop.run_until_complete(process_data(link, user))
     df = score_data(result)
+    df["user"] = user
     return jsonify(df)
 
 @app.route("/", methods=["GET"])
@@ -24,4 +25,4 @@ def home():
 
   
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=4567, debug=False)
+    app.run()

@@ -1,3 +1,6 @@
 __pycache__/*
 venv/*
 req.py
+data/frame/*
+data/video/*
+

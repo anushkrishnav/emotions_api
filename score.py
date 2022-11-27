@@ -1,11 +1,16 @@
 import pandas as pd
 import requests
-from api import process_data
+import os
+from utils import process_data
 import random
 def get_video(link, filename):
     veideo_link = link
-    veideo_name = "data/video/"+filename+".mp4"
+    veideo_name = "app/data/video/"
+    if not os.path.isdir(veideo_name):
+        os.makedirs(veideo_name)
+    veideo_name += f"{filename}.mp4"
     with open(veideo_name, "wb") as f:
+        # write bytes to file
         f.write(requests.get(veideo_link).content)
     return veideo_name
 

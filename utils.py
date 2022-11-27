@@ -27,5 +27,9 @@ async def process_data(video_path, file_name):
     vid_df = input_video.get_emotions(vid_df)
 
     # save the data to a csv file
-    vid_df.to_csv(f"data/csv/{file_name}.csv", index=False)
+    data_file = "app/data/csv/"
+    if not os.path.isdir(data_file):
+        os.makedirs(data_file)
+    data_file += f"{file_name}.csv"
+    vid_df.to_csv(data_file, index=False)
     return vid_df
